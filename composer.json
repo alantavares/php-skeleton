@@ -42,13 +42,7 @@
         "php": ">=7.3"
     },
 
-    "scripts": {
-        "test": [
-            "parallel-lint . --exclude vendor",
-            "phpcs",
-            "phpstan analyse",
-            "phpunit"
-        ],
+    "scripts": {        
         "lint": [
             "parallel-lint . --exclude vendor"
         ],
@@ -60,6 +54,12 @@
         ],
         "phpunit": [
             "phpunit"
+        ],
+        "test": [
+            "composer lint",
+            "composer phpcs",
+            "composer phpstan",
+            "composer phpunit"
         ],
         "coverage": [
             "phpunit --coverage-html reports/"
