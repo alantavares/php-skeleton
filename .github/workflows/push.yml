@@ -5,24 +5,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: build
-      uses: actions/docker/cli@master
+    - name: Build
+      uses: MilesChou/composer-action@master
       with:
-        args: build --target ci .
+        args: install
     - name: phpunit
-      uses: actions/docker/cli@master
+      uses: MilesChou/composer-action@master
       with:
-        args: build --target phpunit .
+        args: phpunit
     - name: phpstan
-      uses: actions/docker/cli@master
+      uses: MilesChou/composer-action@master
       with:
-        args: build --target phpstan .
+        args: phpstan
     - name: phpcs
-      uses: actions/docker/cli@master
+      uses: MilesChou/composer-action@master
       with:
-        args: build --target phpcs .
+        args: phpcs
     - name: lint
-      uses: actions/docker/cli@master
+      uses: MilesChou/composer-action@master
       with:
-        args: build --target lint .
+        args: lint
     
